@@ -47,4 +47,4 @@ def submit_form():
 
 if __name__ == '__main__':
     app.secret_key = 'ELKJ65496-+6/8*8+9+*-/88+*-/8*sdv78587'  # Replace with your secret key
-    app.run(debug=True)
+    app.run(debug=False)
