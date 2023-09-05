@@ -27,14 +27,15 @@ def submit_form():
         email = request.form['email']
         phone = request.form['phone']
         date = request.form['date']
+        time = request.form['time']
         message = request.form['message']
 
         msg = Message('New Reservation Request', sender='expenditure.cob@gmail.com', recipients=[email,'expenditure.cob@gmail.com'])  # Replace with recipient email
        
        
-        msg.body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nDate: {date}\nMessage: {message}"
+        msg.body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nDate: {date}\nTime: {time}\nMessage: {message}"
         msg.html = render_template('email_template.html',  # Set the HTML content with variables
-            name=name, email=email, phone=phone, date=date, message=message)
+            name=name, email=email, phone=phone, date=date,time=time, message=message)
 
 
         try:
